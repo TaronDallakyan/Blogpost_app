@@ -1,0 +1,674 @@
+{
+	"info": {
+		"_postman_id": "93e94cb1-8d89-40d5-a0a7-0ac01e8b662e",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "my_collection",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"TestUser1\",\r\n    \"password\": \"Password123!\",\r\n    \"firstName\": \"testUserFirstName\",\r\n    \"lastName\": \"testUserLastName\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"TestUser1\",\r\n    \"password\":\"Password123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzQxZTk3OTA1NjA4OWU5MmUyOTQiLCJpYXQiOjE3MDY1NzEwMDQsImV4cCI6MTcwNjU3NDYwNH0.qahuNM9DmuXQngBf7iIjDFCYqPnp4Fvf1LSLiq1e81s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/auth/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzQxZTk3OTA1NjA4OWU5MmUyOTQiLCJpYXQiOjE3MDY1NzA4MjksImV4cCI6MTcwNjU3NDQyOX0.DSykmFZis61DVO3Y9GYKwGjyaoRNSwvp5SAS5RpKOKc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"TestUser1\",\r\n    \"oldPassword\": \"Password123!\",\r\n    \"newPassword\": \"Password1234!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/changePassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshUserSession",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzQxZTk3OTA1NjA4OWU5MmUyOTQiLCJpYXQiOjE3MDY1NzEwMDQsImV4cCI6MTcwNjU3NDYwNH0.qahuNM9DmuXQngBf7iIjDFCYqPnp4Fvf1LSLiq1e81s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzQxZTk3OTA1NjA4OWU5MmUyOTQiLCJpYXQiOjE3MDY1NzA4MjksImV4cCI6MTcwNjY1NzIyOX0.ZYVbslOonRGXII7_pyZ8ASpe6CkxXak1hEhIrNHAmDs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/refreshUserSession",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"refreshUserSession"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBlogPost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzQxZTk3OTA1NjA4OWU5MmUyOTQiLCJpYXQiOjE3MDY1NzEwNzMsImV4cCI6MTcwNjU3NDY3M30.Sb8kkQz_xlmItX5eB_5JvTUFndj2H_ix7eDFoMXApN0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"BlogPost1\",\r\n    \"body\": \"Body1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/blogpost/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blogpost",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBlogPosts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI3ZmQ5OTE5Njg2YzAxZGIwMGE0NzgiLCJpYXQiOjE3MDY1NTY5NDUsImV4cCI6MTcwNjU2MDU0NX0.JoW9MNgZtQ5_iFF2rTR6pr_doKyLPPjSs8XXYo7CNGc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/blogpost/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blogpost",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBlogPostById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI3ZmQ5OTE5Njg2YzAxZGIwMGE0NzgiLCJpYXQiOjE3MDY1NTY5NDUsImV4cCI6MTcwNjU2MDU0NX0.JoW9MNgZtQ5_iFF2rTR6pr_doKyLPPjSs8XXYo7CNGc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/blogpost/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blogpost",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65b83563979056089e92e2b0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeBlogPost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzQxZTk3OTA1NjA4OWU5MmUyOTQiLCJpYXQiOjE3MDY1NzEwNzMsImV4cCI6MTcwNjU3NDY3M30.Sb8kkQz_xlmItX5eB_5JvTUFndj2H_ix7eDFoMXApN0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/blogpost/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blogpost",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65b7fe30df9e40548fe7f23b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBlogPost",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzQxZTk3OTA1NjA4OWU5MmUyOTQiLCJpYXQiOjE3MDY1NzEwNzMsImV4cCI6MTcwNjU3NDY3M30.Sb8kkQz_xlmItX5eB_5JvTUFndj2H_ix7eDFoMXApN0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"updatedTitle1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/blogpost/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"blogpost",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65b7fe30df9e40548fe7f23b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzQxZTk3OTA1NjA4OWU5MmUyOTQiLCJpYXQiOjE3MDY1NzEwNzMsImV4cCI6MTcwNjU3NDY3M30.Sb8kkQz_xlmItX5eB_5JvTUFndj2H_ix7eDFoMXApN0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"First Comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/comment/:blogPostId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								":blogPostId"
+							],
+							"variable": [
+								{
+									"key": "blogPostId",
+									"value": "65b83563979056089e92e2b0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getComments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/comment/:blogPostId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								":blogPostId"
+							],
+							"variable": [
+								{
+									"key": "blogPostId",
+									"value": "65b83563979056089e92e2b0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getComment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/comment/:blogPostId/:commentId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								":blogPostId",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "blogPostId",
+									"value": "65b83563979056089e92e2b0"
+								},
+								{
+									"key": "commentId",
+									"value": "65b83625979056089e92e2c0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzQxZTk3OTA1NjA4OWU5MmUyOTQiLCJpYXQiOjE3MDY1NzEwNzMsImV4cCI6MTcwNjU3NDY3M30.Sb8kkQz_xlmItX5eB_5JvTUFndj2H_ix7eDFoMXApN0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/comment/:blogPostId/:commentId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								":blogPostId",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "blogPostId",
+									"value": "65b83563979056089e92e2b0"
+								},
+								{
+									"key": "commentId",
+									"value": "65b83625979056089e92e2c0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzU2Zjk3OTA1NjA4OWU5MmUyYjIiLCJpYXQiOjE3MDY1NzExMTksImV4cCI6MTcwNjU3NDcxOX0.wBr6t0BPGVYRvYJqm-eDyIFTzQFkzlpoUJvfVv5zL-8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"New Comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/comment/:blogPostId/:commentId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"comment",
+								":blogPostId",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "blogPostId",
+									"value": "65b83563979056089e92e2b0"
+								},
+								{
+									"key": "commentId",
+									"value": "65b83625979056089e92e2c0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWI4MzU2Zjk3OTA1NjA4OWU5MmUyYjIiLCJpYXQiOjE3MDY1NzExMTksImV4cCI6MTcwNjU3NDcxOX0.wBr6t0BPGVYRvYJqm-eDyIFTzQFkzlpoUJvfVv5zL-8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
